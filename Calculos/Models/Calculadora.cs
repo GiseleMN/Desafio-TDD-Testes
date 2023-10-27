@@ -26,9 +26,9 @@ namespace Calculos.Models
             return res;
         }
 
-        public int Dividir(int x, int y)
+        public double Dividir(int x, int y)
         {
-            int res = x / y;
+            double res = x / y;
             listaHistorico.Insert(0, "Resultado: " + res + " - Data: " + data);
             return res;
         }

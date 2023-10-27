@@ -13,8 +13,9 @@ public class UnitTest1
     }
 
     [Theory]
-    [InlineData(1, 2, 3)]
+    [InlineData(6, 2, 8)]
     [InlineData(4, 5, 9)]
+    [InlineData(20, 5, 25)]
     public void TesteSomar(int x, int y, int resultado)
     {
         Calculadora calc = construirClass();
@@ -26,6 +27,7 @@ public class UnitTest1
     [Theory]
     [InlineData(1, 2, 2)]
     [InlineData(4, 5, 20)]
+    [InlineData(7, 7, 49)]
     public void TesteMultiplicar(int x, int y, int resultado)
     {
         Calculadora calc = construirClass();
@@ -35,8 +37,9 @@ public class UnitTest1
     }
 
     [Theory]
-    [InlineData(3, 2, 1)]
+    [InlineData(5, 7, -2)]
     [InlineData(9, 5, 4)]
+    [InlineData(20, 5, 15)]
     public void TesteSubtrair(int x, int y, int resultado)
     {
         Calculadora calc = construirClass();
@@ -48,11 +51,13 @@ public class UnitTest1
     [Theory]
     [InlineData(6, 2, 3)]
     [InlineData(4, 2, 2)]
+    [InlineData(5, 2, 2.5)]
+    [InlineData(10, 3, 3.33)]
     public void TesteDividir(int x, int y, int resultado)
     {
         Calculadora calc = construirClass();
 
-        int resultadoCalculadora = calc.Dividir(x, y);
+        double resultadoCalculadora = calc.Dividir(x, y);
         Assert.Equal(resultado, resultadoCalculadora);
     }
 
